@@ -4,7 +4,7 @@ import NavbarMiddle from "@/components/NavBar/navbarMiddle";
 
 export default function NavBar() {
     return (
-        <div className="h-12 flex flex-row w-full bg-indigo-500 border-b-1 overflow-y-hidden">
+        <div className="h-12 flex flex-row w-full border-b border-b-gray-200 overflow-y-hidden">
             <NavbarMiddle/>
             <NavbarRight/>
         </div>
