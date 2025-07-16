@@ -1,7 +1,8 @@
-import NavBar from "@/components/NavBar/navbar";
 import LoginForm from "@/components/LoginForm/loginForm";
+import RegisterForm from "@/components/LoginForm/registerForm";
 
-export default function LoginPage(): JSX.Element {
+
+export default function LoginPage() {
   return (
     <div>
         <LoginForm />
