@@ -8,11 +8,11 @@ export default function LoginForm() {
 
     return (
         <div>
-            <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
-                <div className="relative w-full min-w-xs max-w-md overflow-hidden border rounded-2xl shadow-lg">
+            <div className="min-h-screen bg-gradient-to-tl from-grey-100 to-blue-200  flex items-center justify-center p-4">
+                <div className="relative w-full min-w-xs max-w-sm overflow-hidden border rounded-2xl shadow-lg">
 
                     <div className={`flex transition-transform duration-200 ease-in-out transform ${showRegister ? '-translate-x-full' : 'translate-x-0'}`}>
-                        <div className="w-full flex-shrink-0 p-8 space-y-4">
+                        <div className="w-full flex-shrink-0 p-8 space-y-4 bg-gray-50">
                             <h1 className="text-2xl font-bold text-gray-900 mb-6 text-center" >Sign in</h1>
                             <div>
                                 <p>E-mail</p>
@@ -20,9 +20,9 @@ export default function LoginForm() {
                             </div>
                             <div>
                                 <p>Password</p>
-                                <input className="w-full px-4 py-2 border rounded-md border-gray-400 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none" type="password" placeholder="Enter your password" />
+                                <input className="w-full px-4 py-2 border rounded-md border-gray-400 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none" type="password" placeholder="••••••••••" />
                             </div>
-                            <button className="w-full rounded-md bg-indigo-500 text-white">Login</button>
+                            <button className="w-full rounded-md bg-indigo-500 text-white hover:bg-indigo-400 transition-colors duration-200">Login</button>
                             <p className="text-center">Don`t have an Account?
                                 <button onClick={(e ) => { e.preventDefault();  setTimeout(() => {
                                     setShowRegister(true);
@@ -30,7 +30,7 @@ export default function LoginForm() {
                             </p>
                         </div>
 
-                        <div className="w-full flex-shrink-0 p-8 space-y-4">
+                        <div className="w-full flex-shrink-0 p-8 space-y-4 bg-gray-50">
                             <h1 className="text-2xl font-bold text-gray-900 mb-6 text-center" >Register</h1>
                             <div className="flex flex-row space-x-2">
                                 <div>
@@ -50,7 +50,7 @@ export default function LoginForm() {
                                 <p>Password</p>
                                 <input className="w-full px-4 py-2 border rounded-md border-gray-400 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none" type="password" placeholder="••••••••••" />
                             </div>
-                            <button className="w-full rounded-md bg-indigo-500 text-white">Register</button>
+                            <button className="w-full rounded-md bg-indigo-500 text-white hover:bg-indigo-400 transition-colors duration-200">Register</button>
                             <p className="text-center">Already have an Account?
                                 <button onClick={(e) => { e.preventDefault();  setTimeout(() => {
                                     setShowRegister(false);
