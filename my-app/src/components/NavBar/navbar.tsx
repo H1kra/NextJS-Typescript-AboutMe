@@ -1,4 +1,3 @@
-import NavbarLeft from "@/components/NavBar/navbarLeft";
 import NavbarRight from "@/components/NavBar/navbarRight";
 import NavbarMiddle from "@/components/NavBar/navbarMiddle";
 
@@ -9,4 +8,4 @@ export default function NavBar() {
             <NavbarRight/>
         </div>
     )
-    }
+}
