@@ -8,7 +8,6 @@ export default function LoginForm() {
 
     return (
         <div>
-            <div className="min-h-screen bg-gradient-to-tl from-grey-100 to-blue-200  flex items-center justify-center p-4">
                 <div className="relative w-full min-w-xs max-w-sm overflow-hidden border rounded-2xl shadow-lg">
 
                     <div className={`flex transition-transform duration-200 ease-in-out transform ${showRegister ? '-translate-x-full' : 'translate-x-0'}`}>
@@ -61,6 +60,5 @@ export default function LoginForm() {
 
                 </div>
             </div>
-        </div>
     )
 }
