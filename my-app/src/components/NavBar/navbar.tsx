@@ -3,7 +3,11 @@ import NavbarMiddle from "@/components/NavBar/navbarMiddle";
 
 export default function NavBar() {
     return (
-        <div className="h-12 flex flex-row w-full border-b border-b-gray-200 overflow-y-hidden">
+        <div
+            className={
+                "h-12 flex flex-row w-full border-b border-b-gray-200 overflow-y-hidden text-black"
+            }
+        >
             <NavbarMiddle/>
             <NavbarRight/>
         </div>

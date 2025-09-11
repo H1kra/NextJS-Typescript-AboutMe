@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "",
 };
 
-const Layout = ({ children }: {children: React.ReactNode }) => {
+const LoginLayout = ({ children }: {children: React.ReactNode }) => {
   return (
       <div
           className={"min-h-screen bg-gradient-to-tl from-grey-100 to-blue-200  flex items-center justify-center p-4"}
@@ -17,4 +17,4 @@ const Layout = ({ children }: {children: React.ReactNode }) => {
   );
 }
 
-export default Layout;
+export default LoginLayout;
