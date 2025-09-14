@@ -1,9 +1,9 @@
 'use client'
 
-import {useState, useEffect} from "react";
+import React, {useState, useEffect} from "react";
 import Image from "next/image";
 
-export default function NavbarMiddle() {
+const NavBar = () => {
 
     const [menuOpen, setMenuOpen] = useState(false);
 
@@ -34,8 +34,10 @@ export default function NavbarMiddle() {
                     height={15}
                     className="w-6 h-6"
                     src="/Components/NavBar/menu.png"
-                    alt="Menu" />
-            </nav>
+                    alt="Menu"
+                />
+            </nav
+            >
             <div
                 className={
                     `absolute top-12 left-0 z-50 bg-white shadow-lg h-screen transition-all duration-50 ease-in-out lg:hidden w-64 ${menuOpen ? 'translate-x-0' : '-translate-x-full'}`
@@ -63,7 +65,8 @@ export default function NavbarMiddle() {
                 <div className="flex whitespace-nowrap px-4 w-1/3 justify-center items-center hover:bg-gray-200 transition-colors duration-500 overflow-hidden"><a href="#" >Create About me</a></div>
                 <div className="flex whitespace-nowrap px-4 w-1/3 justify-center items-center hover:bg-gray-200 transition-colors duration-500 overflow-hidden"><a href="#" >Creator</a></div>
             </nav>
-
         </div>
     )
 }
+
+export default NavBar;
