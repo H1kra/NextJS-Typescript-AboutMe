@@ -37,19 +37,9 @@ export default function LoginForm() {
 
     return (
         <>
-                <div
-                    className={
-                        "relative w-full min-w-xs max-w-sm overflow-hidden border rounded-2xl shadow-lg text-black"
-                    }
-                >
-                    <div
-                        className={
-                            "w-full flex-shrink-0 pt-4 pl-4 space-y-4 bg-gray-50"
-                        }
-                    >
-                        <button
-                            onClick={handleGoBack}
-                        >
+                <div className={"relative w-full min-w-xs max-w-sm overflow-hidden border rounded-2xl shadow-lg"}>
+                    <div className={"w-full flex-shrink-0 pt-4 pl-4 space-y-4 bg-gray-50"}>
+                        <button onClick={handleGoBack}>
                             <Image
                                 src={backIcon}
                                 alt="Go back"
@@ -59,36 +49,20 @@ export default function LoginForm() {
                             />
                         </button>
                     </div>
-                    <div
-                        className={
-                            `flex transition-transform duration-200 ease-in-out transform ${showRegister ? '-translate-x-full' : 'translate-x-0'}`
-                        }
-                    >
-                        <div
-                            className={
-                                "w-full flex-shrink-0 p-8 pt-4 space-y-4 bg-gray-50"
-                            }
-                        >
-                            <h1
-                                className={
-                                    "text-2xl font-bold text-gray-900 mb-6 text-center"
-                                }
-                            >
+                    <div className={`flex transition-transform duration-200 ease-in-out transform ${showRegister ? '-translate-x-full' : 'translate-x-0'}`}>
+                        <div className={"w-full flex-shrink-0 p-8 pt-4 space-y-4 bg-gray-50"}>
+                            <h1 className={"text-2xl font-bold mb-6 text-center"}>
                                 Sign in
                             </h1>
                                 <form
                                     onSubmit={(e) => { e.preventDefault(); /* handle login logic here */ }}
-                                    className={
-                                        "w-full flex-shrink-0 p-8 space-y-4"
-                                    }
+                                    className={"w-full flex-shrink-0 p-8 space-y-4"}
                                 >
                                     <div>
                                         <label>
                                             E-mail
                                             <input
-                                                className={
-                                                    "w-full px-4 py-2 border rounded-md border-gray-400 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none"
-                                                }
+                                                className={"w-full px-4 py-2 border rounded-md border-gray-400 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none"}
                                                 type="email"
                                                 name="email"
                                                 placeholder="your@email.com"
@@ -100,9 +74,7 @@ export default function LoginForm() {
                                         <label>
                                             Password
                                             <input
-                                                className={
-                                                    "w-full px-4 py-2 border rounded-md border-gray-400 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none"
-                                                }
+                                                className={"w-full px-4 py-2 border rounded-md border-gray-400 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none"}
                                                 type="password"
                                                 name="password"
                                                 placeholder="••••••••••"
@@ -112,25 +84,16 @@ export default function LoginForm() {
                                     </div>
                                     <button
                                         type="submit"
-                                        className={
-                                            "block mx-auto w-1/2 rounded-md bg-indigo-500 text-white hover:bg-indigo-400 transition-colors duration-200"
-                                        }
+                                        className={"block mx-auto w-1/2 rounded-md bg-indigo-500 text-white hover:bg-indigo-400 transition-colors duration-200"}
                                     >
                                         Login
                                     </button>
                                 </form>
-                                <p className={
-                                    "text-center"
-                                    }
-                                >
+                                <p className={"text-center"}>
                                     Don`t have an Account?
                                     <button
-                                        onClick={
-                                            ()=>setShowRegister(true)
-                                        }
-                                            className={
-                                                "text-blue-500 hover:text-blue-300 underline"
-                                            }
+                                        onClick={()=>setShowRegister(true)}
+                                        className={"hover:text-blue-700 underline"}
                                     >
                                         Sign up
                                     </button>
@@ -138,40 +101,27 @@ export default function LoginForm() {
                         </div>
 
                         <div
-                            className={
-                                "w-full flex-shrink-0 p-7 pt-4 space-y-4 bg-gray-50"
-                            }
+                            className={"w-full flex-shrink-0 p-7 pt-4 space-y-4 bg-gray-50"}
                         >
-                            <h1
-                                className={
-                                    "text-2xl font-bold text-gray-900 mb-6 text-center"
-                                }
-                            >
+                            <h1 className={"text-2xl font-bold mb-6 text-center"}>
                                 Register
                             </h1>
                             <form
                                 onSubmit={(e) => { e.preventDefault(); /* handle login logic here */ }}
                                 className="space-y-4"
                             >
-                                <div
-                                    className={
-                                        "flex flex-row space-x-2"
-                                    }
-                                >
+                                <div className={"flex flex-row space-x-2"}>
                                     <div>
                                         <p>Name</p>
                                         <input
-                                            className={
-                                                "w-full px-4 py-2 border rounded-md border-gray-400 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none"
-                                            }
-                                            placeholder="Your name"/>
+                                            className={"w-full px-4 py-2 border rounded-md border-gray-400 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none"}
+                                            placeholder="Your name"
+                                        />
                                     </div>
                                     <div>
                                         <p>Surname</p>
                                         <input
-                                            className={
-                                                "w-full px-4 py-2 border rounded-md border-gray-400 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none"
-                                            }
+                                            className={"w-full px-4 py-2 border rounded-md border-gray-400 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none"}
                                             placeholder="Your surname"
                                         />
                                     </div>
@@ -179,9 +129,7 @@ export default function LoginForm() {
                                 <div>
                                     <p>E-mail</p>
                                     <input
-                                        className={
-                                            "w-full px-4 py-2 border rounded-md border-gray-400 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none"
-                                        }
+                                        className={"w-full px-4 py-2 border rounded-md border-gray-400 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none"}
                                         type="email"
                                         placeholder="your@gmail.com"
                                     />
@@ -189,24 +137,19 @@ export default function LoginForm() {
                                 <div>
                                     <p>Password</p>
                                     <input
-                                        className={
-                                            "w-full px-4 py-2 border rounded-md border-gray-400 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none"
-                                        }
+                                        className={"w-full px-4 py-2 border rounded-md border-gray-400 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none"}
                                         type="password"
-                                        placeholder="••••••••••" />
+                                        placeholder="••••••••••"
+                                    />
                                 </div>
                                 <button
-                                    className={
-                                        "block mx-auto w-1/2 rounded-md bg-indigo-500 text-white hover:bg-indigo-400 transition-colors duration-200"
-                                    }
+                                    className={"block mx-auto w-1/2 rounded-md bg-indigo-500 text-white hover:bg-indigo-400 transition-colors duration-200"}
                                     type="submit"
                                 >
                                     Register
                                 </button>
                             </form>
-                            <p
-                                className="text-center"
-                            >
+                            <p className="text-center">
                                 Already have an Account?
                                 <button
                                     onClick={()=>setShowRegister(false)}

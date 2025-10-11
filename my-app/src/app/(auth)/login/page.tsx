@@ -4,7 +4,7 @@ import LoginForm from "@/components/LoginForm/loginForm";
 
 export default function LoginPage() {
       return (
-        <div>
+        <div className="text-gray-900">
             <LoginForm />
         </div>
       );
