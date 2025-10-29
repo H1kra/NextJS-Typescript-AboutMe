@@ -9,11 +9,10 @@ import { useRouter } from 'next/navigation';
 
 export default function LoginForm() {
 
-    //const [loginformData, setLoginFormData] = useState({
-    //    email: "",
-    //    password: "",
-    //    rememberMe: false,
-    //});
+    const [loginFormData, setLoginFormData] = useState({
+        email: "",
+        password: "",
+    });
     const [registerFormData, setRegisterFormData] = useState({
         name: "",
         surname: "",
@@ -66,6 +65,38 @@ export default function LoginForm() {
             setLoading(false);
         }
     };
+    const handleLoginChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setLoginFormData({
+            ...loginFormData,
+            [e.target.name]: e.target.value,
+        });
+    };
+    const handleLoginSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setLoading(true);
+        setMessage(null);
+
+        try {
+            const res = await fetch("http://localhost:8080/users/login", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(loginFormData),
+            });
+
+            if (res.ok) {
+                setMessage("Logged-in successfully!");
+                setLoginFormData({ email: "", password: "" });
+            } else {
+                const errorText = await res.text();
+                setMessage(errorText || "Login failed");
+            }
+        } catch (err) {
+            console.error(err);
+            setMessage("Network error, please try again.");
+        } finally {
+            setLoading(false);
+        }
+    };
 
     //const [showPassword, setShowPassword] = useState(false);
 
@@ -89,7 +120,7 @@ export default function LoginForm() {
                                 Sign in
                             </h1>
                                 <form
-                                    onSubmit={(e) => { e.preventDefault(); /* handle login logic here */ }}
+                                    onSubmit={handleLoginSubmit}
                                     className={"w-full flex-shrink-0 p-8 space-y-4"}
                                 >
                                     <div>
@@ -99,6 +130,8 @@ export default function LoginForm() {
                                                 className={"w-full px-4 py-2 border rounded-md border-gray-400 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none"}
                                                 type="email"
                                                 name="email"
+                                                value={loginFormData.email}
+                                                onChange={handleLoginChange}
                                                 placeholder="your@email.com"
                                                 required
                                             />
@@ -111,6 +144,8 @@ export default function LoginForm() {
                                                 className={"w-full px-4 py-2 border rounded-md border-gray-400 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none"}
                                                 type="password"
                                                 name="password"
+                                                value={loginFormData.password}
+                                                onChange={handleLoginChange}
                                                 placeholder="••••••••••"
                                                 required
                                             />
@@ -120,7 +155,7 @@ export default function LoginForm() {
                                         type="submit"
                                         className={"block mx-auto w-1/2 rounded-md bg-indigo-500 text-white hover:bg-indigo-400 transition-colors duration-200"}
                                     >
-                                        Login
+                                        {loading ? "Logging in..." : "Login"}
                                     </button>
                                 </form>
                                 <p className={"text-center"}>
@@ -132,6 +167,11 @@ export default function LoginForm() {
                                         Sign up
                                     </button>
                                 </p>
+                                {message && (
+                                    <p className={`text-center ${message.includes("successful") ? "text-green-600" : "text-red-600"}`}>
+                                        {message}
+                                    </p>
+                                )}
                         </div>
 
                         <div
