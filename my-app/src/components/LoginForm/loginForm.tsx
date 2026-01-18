@@ -9,6 +9,8 @@ import { useRouter } from 'next/navigation';
 
 export default function LoginForm() {
 
+    const apiUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
+
     const [loginFormData, setLoginFormData] = useState({
         email: "",
         password: "",
@@ -45,7 +47,7 @@ export default function LoginForm() {
         setMessage(null);
 
         try {
-            const res = await fetch("http://localhost:8080/users/register", {
+            const res = await fetch(`${apiUrl}/v1/users/register`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(registerFormData),
@@ -54,6 +56,9 @@ export default function LoginForm() {
             if (res.ok) {
                 setMessage("Registration successful!");
                 setRegisterFormData({ name: "", surname: "", email: "", password: "" });
+                setTimeout(() => {
+                    setShowRegister(false);
+                }, 500);
             } else {
                 const errorText = await res.text();
                 setMessage(errorText || "Registration failed");
@@ -77,15 +82,24 @@ export default function LoginForm() {
         setMessage(null);
 
         try {
-            const res = await fetch("http://localhost:8080/users/login", {
+            const res = await fetch(`${apiUrl}/v1/users/login`,{
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(loginFormData),
             });
 
             if (res.ok) {
-                setMessage("Logged-in successfully!");
+                const data = await res.json();
+                localStorage.setItem("token", data.token);
+
+                setMessage("Logged-in successfully! Redirecting...");
                 setLoginFormData({ email: "", password: "" });
+
+                setTimeout(() => {
+                    router.push("/");
+                    router.refresh();
+                }, 500);
+
             } else {
                 const errorText = await res.text();
                 setMessage(errorText || "Login failed");
