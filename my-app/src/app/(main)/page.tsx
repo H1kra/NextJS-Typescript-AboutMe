@@ -1,4 +1,5 @@
 import ScrollObserver from "@/components/Observers/scrollObserver";
+import ItemCard from "@/components/ItemCard/itemCard";
 
 export default function HomePage() {
     return (
@@ -8,12 +9,14 @@ export default function HomePage() {
 
                     {/* Main hero section */}
                     <div className="flex flex-1 items-center justify-center pt-0 p-8 lg:p-16 min-h-[80vh]">
+                        <ScrollObserver>
                         <h1
                             id="title"
                             className="text-5xl font-bold text-center leading-tight sm:text-6xl md:text-7xl lg:text-8xl animate-scaleUp text-gray-900"
                         >
                             Welcome to AboutMe
                         </h1>
+                        </ScrollObserver>
                     </div>
 
                     {/* Info sidebar */}
@@ -28,6 +31,9 @@ export default function HomePage() {
                     </aside>
 
                 </main>
+            </div>
+            <div className="min-h-screen bg-gray-300 font-sans text-gray-800">
+                <ItemCard title="shoe" price={299}></ItemCard>
             </div>
         </>
     );
